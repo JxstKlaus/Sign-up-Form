@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: rgb(87, 76, 97);
+    font-family: "Open Sans";
+}
+a{
+    color: rgb(61, 61, 209);
+}
+html{
+    background-image: url(src/background.jpg);
+    background-size: 100vw;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    width: 100vw;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(.5vh);
+
+}
+h2{
+    padding-top: max(1.5rem,10vh);
+    padding-bottom: 1rem;
+    /* font-size: 2rem; */
+    font-size: max(4vh,2rem);
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max(500px, 25vw);
+    height: max(600px,50vh);
+    background-color: rgba(255, 255, 255, .9);
+    margin-top: clamp(5vh,4rem,20vh);
+    border-radius: 2vh;
+    margin-bottom: .7rem;
+    
+
+    .user-input-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: max(1.3rem,15%);
+        width: 80%;
+        height: 30%;
+        padding-bottom: 1.4rem;
+
+        .login{
+            background-color: white;
+            width: 80%;
+            height: max(3rem, 25%);
+            border-radius: 90px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+
+
+            align-content: center;
+            padding-left: max(10px, 1vh);
+            font-size: max(.9rem,1.2vh);
+        }
+    }
+
+    .sign-in{
+        border-radius: 100px;
+        background-color: blueviolet;
+        transition: ease 1s;
+        width: max(9rem, 25%);
+        height: max(3rem, 10%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: .6rem; 
+        box-shadow: rgba(171, 82, 189, 0.7) 0px 7px 29px 0px;
+        button{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            font-size: max(1.2rem,1.8vh);
+            font-weight: 400;
+        }
+    }
+
+    .sign-in:hover{
+        background-color: rgb(56, 11, 43);
+    }
+
+    .sign-up{
+        font-size: max(.8rem,1vh);
+        margin-bottom: .5rem;
+    }
+}
+
+footer{
+    margin-bottom: .5rem;
+    .copy{
+        font-size: max(2vh,.9rem);
+        img{
+            width: max(2vh,.9rem);
+        }
+    }
+}
