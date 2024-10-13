@@ -2,13 +2,15 @@
     --color-text: rgb(89, 71, 107);
     --color-link: rgb(61, 61, 209);
     --color-form-container: rgba(255, 255, 255, .9);
+    --dark-bg-color: blueviolet;
 
 }
 
 :root.dark{
-    --color-text: rgb(194, 169, 219);
+    --color-text: rgb(162, 136, 189);
     --color-link: rgb(105, 105, 236);
     --color-form-container: rgba(46, 46, 46, 0.9);
+    --dark-bg-color: rgb(138, 43, 226);
 
 }
 
@@ -41,8 +43,7 @@ body{
 
 }
 h2{
-    padding-top: 3rem;
-    padding-bottom: 1rem;
+    padding: 2rem 0;
     font-size: 2rem;
 }
 
@@ -63,30 +64,50 @@ h2{
     .user-input-container{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        gap: 1.3rem;
         width: 80%;
-        height: 30%;
+        height: 45%;
         padding-bottom: 1.4rem;
 
-        .login{
+        .sign-up{
             background-color: white;
             width: 80%;
             height: 3rem;
             border-radius: 90px;
             box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
-
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
 
             align-content: center;
             padding-left: 10px;
             font-size: .9rem;
+
+            .icon img{
+                width: 24px;
+                height: 24px;
+                filter: invert(47%) sepia(100%) saturate(6492%) hue-rotate(263deg) brightness(88%) contrast(102%);
+            }
+        }
+
+        .terms{
+            font-size: .7rem;
+            align-self: center;
+
+            span{
+                text-decoration: underline;
+                color: var(--color-link);
+            }
         }
     }
 
-    .sign-in{
+
+    .continue{
         border-radius: 100px;
-        background-color: blueviolet;
+        background-color: var(--dark-bg-color);
         transition: ease 1s;
         width: 9rem;
         height: 3rem;
@@ -107,11 +128,28 @@ h2{
         }
     }
 
-    .sign-in:hover{
-        background-color: rgb(56, 11, 43);
+    .continue:hover{
+        background-color: rgb(112, 41, 92);
     }
 
-    .sign-up{
+    .checkbox-wrapper{
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        .checkbox{
+            width: .8rem;
+            height: .8rem;
+        }
+        label{
+            font-size: .6rem;
+            span{
+                text-decoration: underline;
+                color: var(--color-link)
+            }
+        }
+    }
+
+    .login{
         font-size: .8rem;
         margin-bottom: .5rem;
     }
