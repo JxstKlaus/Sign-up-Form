@@ -3,6 +3,7 @@
     --color-link: rgb(61, 61, 209);
     --color-form-container: rgba(255, 255, 255, .9);
     --dark-bg-color: blueviolet;
+    --color-form-text: rgb(43, 43, 43);
 
 }
 
@@ -11,6 +12,8 @@
     --color-link: rgb(105, 105, 236);
     --color-form-container: rgba(46, 46, 46, 0.9);
     --dark-bg-color: rgb(138, 43, 226);
+    --color-form-text: rgb(43, 43, 43);
+
 
 }
 
@@ -54,21 +57,21 @@ h2{
     width: max(500px, 25vw);
     height: max(600px,50vh);
     background-color: var(--color-form-container);
-    margin-top: 3rem;
+    margin-top: 12vh;
     border-radius: 2vh;
-    margin-bottom: .7rem;
     transition: all ease-in-out .3s;
+    position: relative;
 
     
 
-    .user-input-container{
+    form{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         width: 80%;
-        height: 45%;
-        padding-bottom: 1.4rem;
+        height: 65%;
+        padding-bottom: .3rem;
 
         .sign-up{
             background-color: white;
@@ -79,12 +82,24 @@ h2{
             display: flex;
             align-items: center;
             gap: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-
-            align-content: center;
+            
             padding-left: 10px;
-            font-size: .9rem;
+            
+
+            input{
+                width: 80%;
+                font-size: 1rem;
+                color: var(--color-form-text);
+                font-weight: 600;
+                outline: none;
+            }
+
+            input::placeholder{
+                text-transform: uppercase;
+                color: var(--color-text);
+                font-weight: 600;
+                font-size: .9rem;
+            }
 
             .icon img{
                 width: 24px;
@@ -115,7 +130,6 @@ h2{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: .6rem; 
         box-shadow: rgba(171, 82, 189, 0.7) 0px 7px 29px 0px;
         button{
             width: 100%;
@@ -130,6 +144,13 @@ h2{
 
     .continue:hover{
         background-color: rgb(112, 41, 92);
+    }
+
+    .error{
+        font-size: .7rem;
+        color: red;
+        position: absolute;
+        bottom: 1rem;
     }
 
     .checkbox-wrapper{
@@ -177,7 +198,7 @@ footer{
     padding: .2vw;
     justify-content: flex-start;
     transition: all ease-in-out .3s;
-    position: relative;
+    position: absolute;
 
     margin-bottom: 1rem;
     
