@@ -42,7 +42,7 @@ const error = document.querySelector('.error');
 form.addEventListener("submit", (event) => {
     event.preventDefault();
   
-    const isEmailValid = email.value.length === 0 || emailRegExp.test(email.value);
+    const isEmailValid = email.value.length > 0  &&  emailRegExp.test(email.value);
     const isFullNameValid = fullName.value.length > 0;
     const isPasswordValid = pass.value.length > 8;
     const isConfirmValid = pass.value === confirmPass.value;
