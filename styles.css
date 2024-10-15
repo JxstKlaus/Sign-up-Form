@@ -82,6 +82,7 @@ h2{
             display: flex;
             align-items: center;
             gap: 8px;
+            border: 2px solid var(--dark-bg-color);
             
             padding-left: 10px;
             
@@ -107,6 +108,10 @@ h2{
                 filter: invert(47%) sepia(100%) saturate(6492%) hue-rotate(263deg) brightness(88%) contrast(102%);
             }
         }
+        .sign-up.invalid{
+            border-color: red;
+        }
+
 
         .terms{
             font-size: .7rem;
@@ -146,17 +151,15 @@ h2{
         background-color: rgb(112, 41, 92);
     }
 
-    .error{
-        font-size: .7rem;
-        color: red;
-        position: absolute;
-        bottom: 1rem;
-    }
+    
 
     .checkbox-wrapper{
         display: flex;
+        width: 100%;
+        justify-content: center;
         align-items: center;
         gap: .3rem;
+        position: relative;
         .checkbox{
             width: .8rem;
             height: .8rem;
@@ -167,6 +170,15 @@ h2{
                 text-decoration: underline;
                 color: var(--color-link)
             }
+        }
+
+        .error{
+            font-size: .7rem;
+            color: red;
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translate(-50%, 0);
         }
     }
 

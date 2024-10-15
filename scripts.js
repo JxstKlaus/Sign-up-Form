@@ -45,29 +45,37 @@ form.addEventListener("submit", (event) => {
     const isEmailValid = email.value.length > 0  &&  emailRegExp.test(email.value);
     const isFullNameValid = fullName.value.length > 0;
     const isPasswordValid = pass.value.length > 8;
-    const isConfirmValid = pass.value === confirmPass.value;
+    const isConfirmValid = pass.value === confirmPass.value && isPasswordValid;
     const isTermsChecked = terms.checked;
 
     if (!isFullNameValid) {
-        email.className = "invalid";
-        error.textContent = "Don't be shy, darling!";
+        fullName.parentElement.classList.add("invalid");
+        //error.textContent = "Don't be shy, darling!";
+    } else{
+        fullName.parentElement.classList.remove("invalid");
     }
-    else if (!isEmailValid) {
-        email.className = "invalid";
-        error.textContent = "Enter a correct email, darling!";
-    } 
-    else if (!isPasswordValid) {
-        email.className = "invalid";
-        error.textContent = "Password must be at least 8 letters, darling!";
-    } 
-    else if (!isConfirmValid) {
-        email.className = "invalid";
-        error.textContent = "Passwords don't match, darling!";
+    if (!isEmailValid) {
+        email.parentElement.classList.add("invalid");
+        //error.textContent = "Enter a correct email, darling!";
+    } else{
+        fullName.parentElement.classList.remove("invalid");
     }
-    else if (!isTermsChecked){
+    if (!isPasswordValid) {
+        pass.parentElement.classList.add("invalid");
+        //error.textContent = "Password must be at least 8 letters, darling!";
+    } 
+    if (!isConfirmValid) {
+        confirmPass.parentElement.classList.add("invalid");
+        //error.textContent = "Passwords don't match, darling!";
+    }else{
+        fullName.parentElement.classList.remove("invalid");
+    }
+    if (!isTermsChecked){
         error.textContent = "Accept the terms, darling!";
+    }else{
+        error.textContent = "";
     }
-    else {
+    if (isEmailValid && isFullNameValid && isPasswordValid && isConfirmValid && isTermsChecked) {
       error.textContent = "";
       form.submit();
     }
